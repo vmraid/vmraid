@@ -570,9 +570,9 @@ aggregate-error@^3.0.0:
     clean-stack "^2.0.0"
     indent-string "^4.0.0"
 
-"air-datepicker@github:vmraid/air-datepicker":
+"air-datepicker@github:frappe/air-datepicker":
   version "2.2.3"
-  resolved "https://codeload.github.com/vmraid/air-datepicker/tar.gz/ed37b94d95c68d8544357e330be0c89d044a3eea"
+  resolved "https://codeload.github.com/frappe/air-datepicker/tar.gz/ed37b94d95c68d8544357e330be0c89d044a3eea"
   dependencies:
     jquery ">=2.0.0 <4.0.0"
 
@@ -2523,23 +2523,23 @@ fraction.js@^4.0.13:
   resolved "https://registry.yarnpkg.com/fraction.js/-/fraction.js-4.0.13.tgz#3c1c315fa16b35c85fffa95725a36fa729c69dfe"
   integrity sha512-E1fz2Xs9ltlUp+qbiyx9wmt2n9dRzPsS11Jtdb8D2o+cC7wr9xkkKsVKJuBX0ST+LVS+LhLO+SbLJNtfWcJvXA==
 
-vmraid-charts@^2.0.0-rc13:
+frappe-charts@^2.0.0-rc13:
   version "2.0.0-rc13"
-  resolved "https://registry.yarnpkg.com/vmraid-charts/-/vmraid-charts-2.0.0-rc13.tgz#fdb251d7ae311c41e38f90a3ae108070ec6b9072"
+  resolved "https://registry.yarnpkg.com/frappe-charts/-/frappe-charts-2.0.0-rc13.tgz#fdb251d7ae311c41e38f90a3ae108070ec6b9072"
   integrity sha512-Bv7IfllIrjRbKWHn5b769dOSenqdBixAr6m5kurf8ZUOJSLOgK4HOXItJ7BA8n9PvviH9/k5DaloisjLM2Bm1w==
 
-vmraid-datatable@^1.15.3:
+frappe-datatable@^1.15.3:
   version "1.15.3"
-  resolved "https://registry.yarnpkg.com/vmraid-datatable/-/vmraid-datatable-1.15.3.tgz#1737e9aebfd363ffadffced71a3534c40e350223"
+  resolved "https://registry.yarnpkg.com/frappe-datatable/-/frappe-datatable-1.15.3.tgz#1737e9aebfd363ffadffced71a3534c40e350223"
   integrity sha512-tUE3pNbxCMX0HPKvwurLBPRAOAdS0gNo1+MpoyFSqXI7b7sp6/TCBRht6qu1Luw+VyIzBtXkJdnnqU+Uoy8iow==
   dependencies:
     hyperlist "^1.0.0-beta"
     lodash "^4.17.5"
     sortablejs "^1.7.0"
 
-vmraid-gantt@^0.5.0:
+frappe-gantt@^0.5.0:
   version "0.5.0"
-  resolved "https://registry.yarnpkg.com/vmraid-gantt/-/vmraid-gantt-0.5.0.tgz#4dc7aa125f318efea64b4ae0e38f67a720238c1d"
+  resolved "https://registry.yarnpkg.com/frappe-gantt/-/frappe-gantt-0.5.0.tgz#4dc7aa125f318efea64b4ae0e38f67a720238c1d"
   integrity sha512-RAskVuBmnTcPJXh87oVhYmnNGy/9lvZlLHGui8QFB8yRBuUjzpZoZfZ+hKmDtBDmWNrE2/LRta06W5WmhTzzWQ==
 
 fresh@0.5.2:
