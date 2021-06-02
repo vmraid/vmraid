@@ -104,6 +104,7 @@ def download_vmraid_assets(verbose=True):
 
 	if vmraid_head:
 		try:
+			print("VmRaid Head: ", vmraid_head)
 			url = get_assets_link(vmraid_head)
 			click.secho("Retrieving assets...", fg="yellow")
 			prefix = mkdtemp(prefix="vmraid-assets-", suffix=vmraid_head)
