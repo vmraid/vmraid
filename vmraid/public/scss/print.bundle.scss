@@ -1,0 +1,15 @@
+@import "vmraid/public/css/bootstrap.css";
+@import "./common/quill";
+@import "./desk/css_variables";
+@import "./element/checkbox";
+
+// !! PDF Barcode hack !!
+// Workaround for rendering barcodes prior to https://github.com/vmraid/vmraid/pull/15307
+@media print {
+	svg[data-barcode-value] > rect {
+		fill: white !important;
+	}
+	svg[data-barcode-value] > g {
+		fill: black !important;
+	}
+}

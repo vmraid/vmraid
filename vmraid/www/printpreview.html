@@ -1,0 +1,10 @@
+---
+no_cache: 1
+---
+
+<!-- </body> -->
+{{
+    vmraid
+        .get_doc('Print Format', vmraid.form_dict.print_format)
+        .get_html(vmraid.form_dict.name, vmraid.form_dict.letterhead)
+}}

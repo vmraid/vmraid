@@ -1,0 +1,9 @@
+# Copyright (c) {year}, {app_publisher} and Contributors
+# See license.txt
+
+# import vmraid
+from vmraid.tests.utils import VMRaidTestCase
+
+
+class Test{classname}(VMRaidTestCase):
+	pass

@@ -1,0 +1,147 @@
+{% extends "templates/web.html" %}
+
+{% block title %}{{ _(title) }}{% endblock %}
+
+{% block breadcrumbs %}{% endblock %}
+
+{% macro container_attributes() %}
+data-web-form="{{ name }}" data-web-form-doctype="{{ doc_type }}" data-login-required="{{ vmraid.utils.cint(login_required and vmraid.session.user=='Guest') }}" data-is-list="{{ vmraid.utils.cint(is_list) }}" data-allow-delete="{{ allow_delete }}"
+{% endmacro %}
+
+{% block page_content %}
+
+{% if has_header and login_required and allow_multiple %}
+<!-- breadcrumb -->
+{% include "templates/includes/breadcrumbs.html" %}
+{% else %}
+<div style="height: 3rem"></div>
+{% endif %}
+
+<!-- main card -->
+<div class="vmraid-card {{ vmraid.utils.cint(is_list) and 'list-card' or '' }}">
+	{% if is_list %}
+	<!-- list -->
+	<div class="d-flex justify-content-between">
+		<h3>{{ _(title) }}</h3>
+		<div class="list-view-actions"></div>
+	</div>
+
+	<div class="web-form-wrapper" {{ container_attributes() }}></div>
+	<div id="list-filters" class="row mt-4"></div>
+	<div id="list-table" class="list-table pt-4 overflow-auto"></div>
+	<div class="list-view-footer text-right"></div>
+	{% else %}
+	<!-- web form -->
+	<div class="d-flex justify-content-between web-form-head">
+		<h3>{{ _(title) }}</h3>
+		<div class="web-form-actions"></div>
+	</div>
+	<div role="form">
+		<div id="introduction" class="text-muted hidden"></div>
+		<div class="web-form-wrapper" {{ container_attributes() }}></div>
+		<div class="web-form-footer text-right"></div>
+	</div>
+
+	{% if show_attachments and not vmraid.form_dict.new and attachments %}
+	<div class="attachments">
+		<h5>{{ _("Attachments") }}</h5>
+		{% for attachment in attachments %}
+		<div class="attachment">
+			<a class="no-underline attachment-link" href="{{ attachment.file_url }}" target="blank">
+				<div class="row">
+					<div class="col-9">
+						<span class="file-name">{{ attachment.file_name }}</span>
+					</div>
+					<div class="col-3">
+						<span class="pull-right file-size">{{ attachment.file_size }}</span>
+					</div>
+				</div>
+			</a>
+		</div>
+		{% endfor %}
+	</div>
+	{% endif %} {# attachments #}
+
+	{% endif %}
+</div>
+
+{% if allow_comments and not vmraid.form_dict.new and not is_list -%}
+<!-- comments -->
+<div class="comments" style="margin-top: 3rem;">
+	{% include 'templates/includes/comments/comments.html' %}
+</div>
+{%- endif %} {# comments #}
+
+{% endblock page_content %}
+
+{% block script %}
+<script>
+vmraid.boot = {
+	sysdefaults: {
+		float_precision: parseInt("{{ vmraid.get_system_settings('float_precision') or 3 }}"),
+		date_format: "{{ vmraid.get_system_settings('date_format') or 'yyyy-mm-dd' }}",
+	},
+	time_zone: {
+		system: "{{ vmraid.utils.get_time_zone() }}",
+		user: "{{ vmraid.db.get_value('User', vmraid.session.user, 'time_zone') or vmraid.utils.get_time_zone() }}"
+	},
+	link_title_doctypes: {{ link_title_doctypes }}
+};
+// for backward compatibility of some libs
+vmraid.sys_defaults = vmraid.boot.sysdefaults;
+vmraid._messages = {{ translated_messages }};
+$(".file-size").each(function() {
+	$(this).text(vmraid.form.formatters.FileSize($(this).text()));
+});
+</script>
+{{ include_script("controls.bundle.js") }}
+{% if is_list %} <!-- web form list -->
+{{ include_script("dialog.bundle.js") }}
+{{ include_script("web_form.bundle.js") }}
+{{ include_script("bootstrap-4-web.bundle.js") }}
+{% else %} <!-- web form -->
+{{ include_script("dialog.bundle.js") }}
+<script type="text/javascript" src="/assets/vmraid/node_modules/vue/dist/vue.js"></script>
+<script>
+	Vue.prototype.__ = window.__;
+	Vue.prototype.vmraid = window.vmraid;
+</script>
+{{ include_script("web_form.bundle.js") }}
+{{ include_script("bootstrap-4-web.bundle.js") }}
+<script>
+
+{% if client_script %}
+vmraid.init_client_script = () => {
+	try {
+		{{ client_script }}
+	} catch(e) {
+		console.error('Error in web form client script');
+		console.error(e);
+	}
+}
+{% endif %}
+
+{% if script is defined %}
+	{{ script }}
+{% endif %}
+</script>
+{% endif %}
+{% endblock script %}
+
+{% block style %}
+{% if not is_list %}
+{{ include_style('web_form.bundle.css') }}
+{% endif %}
+
+<style>
+body {
+	background-color: var(--bg-color);
+}
+{% if style is defined %}
+	{{ style }}
+{% endif %}
+{% if custom_css %}
+	{{ custom_css }}
+{% endif %}
+</style>
+{% endblock %}
