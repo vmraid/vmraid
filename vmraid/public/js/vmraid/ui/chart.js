@@ -1,4 +1,4 @@
-import { Chart } from "vmraid-charts/dist/vmraid-charts.esm";
+import { Chart } from "frappe-charts/dist/frappe-charts.esm";
 
 vmraid.provide("vmraid.ui");
 vmraid.Chart = Chart;
