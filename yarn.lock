@@ -36,7 +36,7 @@
     codex-notifier "^1.1.2"
     codex-tooltip "^1.0.1"
 
-"@vmraid/esbuild-plugin-postcss2@^0.1.3":
+"@frappe/esbuild-plugin-postcss2@^0.1.3":
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/@frappe/esbuild-plugin-postcss2/-/esbuild-plugin-postcss2-0.1.3.tgz#523a5cc32788f184bb78c7b946c9f132ef386508"
   integrity sha512-/kPz/NJki2GFFtcgTnvdkkjgPEU1uHmaN7/OI2Ysc2tEZ7dcL7FYEEV72a5Fv8cniJbmH8UUjItZmHixFCT1Dg==
@@ -180,7 +180,7 @@ after@0.8.2:
   resolved "https://registry.yarnpkg.com/after/-/after-0.8.2.tgz#fedb394f9f0e02aa9768e702bda23b505fae7e1f"
   integrity sha1-/ts5T58OAqqXaOcCvaI7UF+ufh8=
 
-"air-datepicker@github:vmraid/air-datepicker":
+"air-datepicker@github:frappe/air-datepicker":
   version "2.2.3"
   resolved "https://codeload.github.com/frappe/air-datepicker/tar.gz/ed37b94d95c68d8544357e330be0c89d044a3eea"
   dependencies:
@@ -1775,12 +1775,12 @@ fraction.js@^4.1.2:
   resolved "https://registry.yarnpkg.com/fraction.js/-/fraction.js-4.2.0.tgz#448e5109a313a3527f5a3ab2119ec4cf0e0e2950"
   integrity sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==
 
-vmraid-charts@^2.0.0-rc13:
+frappe-charts@^2.0.0-rc13:
   version "2.0.0-rc13"
   resolved "https://registry.yarnpkg.com/frappe-charts/-/frappe-charts-2.0.0-rc13.tgz#fdb251d7ae311c41e38f90a3ae108070ec6b9072"
   integrity sha512-Bv7IfllIrjRbKWHn5b769dOSenqdBixAr6m5kurf8ZUOJSLOgK4HOXItJ7BA8n9PvviH9/k5DaloisjLM2Bm1w==
 
-vmraid-datatable@^1.16.1:
+frappe-datatable@^1.16.1:
   version "1.16.1"
   resolved "https://registry.yarnpkg.com/frappe-datatable/-/frappe-datatable-1.16.1.tgz#a5844b7ad8259ef45606608f492ca4b343006818"
   integrity sha512-TRj3459YWyJdoP9MgHfOAEq7ylyoT3TVkwxLQGEmn5Xj6UAJOFa7F9j4TaWnFXW8tuoy69z/TktDclOurMeT2w==
@@ -1789,7 +1789,7 @@ vmraid-datatable@^1.16.1:
     lodash "^4.17.5"
     sortablejs "^1.7.0"
 
-vmraid-gantt@^0.6.0:
+frappe-gantt@^0.6.0:
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/frappe-gantt/-/frappe-gantt-0.6.0.tgz#fece2fdecc0b8d6065d3c420d9681b719b827047"
   integrity sha512-/P7s9edP6EoLD09EX2HPqsy1u0v4zYcurMy4ByExArvj7t0UDJlpxp88nISFtMkQe+aofaO9dR0fd61ZwX0O6g==
