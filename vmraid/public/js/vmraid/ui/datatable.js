@@ -1,3 +1,3 @@
-import DataTable from "vmraid-datatable";
+import DataTable from "frappe-datatable";
 
 vmraid.DataTable = DataTable;

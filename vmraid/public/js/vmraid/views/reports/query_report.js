@@ -1,6 +1,6 @@
 // Copyright (c) 2018, VMRaid and Contributors
 // MIT License. See license.txt
-import DataTable from 'vmraid-datatable';
+import DataTable from 'frappe-datatable';
 
 vmraid.provide('vmraid.widget.utils');
 vmraid.provide('vmraid.views');

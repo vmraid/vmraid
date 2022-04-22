@@ -1,7 +1,7 @@
 /**
  * vmraid.views.ReportView
  */
-import DataTable from 'vmraid-datatable';
+import DataTable from 'frappe-datatable';
 
 window.DataTable = DataTable;
 vmraid.provide('vmraid.views');
